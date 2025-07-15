@@ -1,1 +1,83 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #e0f7fa;
+  color: #004d40;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
 
+h1 {
+  color: #006064;
+  margin-bottom: 30px;
+}
+
+/* Contenedor de la malla: columnas horizontales */
+.malla {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+}
+
+/* Cada semestre como columna */
+.semestre {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 180px;
+}
+
+/* Título del semestre */
+.semestre-title {
+  font-weight: bold;
+  color: #006064;
+  margin-bottom: 10px;
+  background-color: #b2ebf2;
+  padding: 5px;
+  border-radius: 8px;
+  border: 1px solid #0097a7;
+}
+
+/* Cuadro de ramo */
+.course {
+  background-color: #b2ebf2;  /* azul agua claro */
+  border: 2px solid #0097a7;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-align: left;
+  font-size: 14px;
+  color: #004d40;
+}
+
+/* Ramo bloqueado */
+.course.locked {
+  background-color: #d0dfe2;  /* gris azulado */
+  color: #888;
+  border-color: #b0bec5;
+  cursor: not-allowed;
+}
+
+/* Ramo aprobado */
+.course.completed {
+  background-color: #006878;  /* azul agua oscuro */
+  border-color: #004d40;
+  color: white;
+  text-decoration: line-through;  /* ✅ texto tachado */
+}
+
+/* Créditos ocultos por defecto */
+.course .creditos {
+  display: none;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Créditos visibles si el ramo está aprobado */
+.course.completed .creditos {
+  display: block;
+}
